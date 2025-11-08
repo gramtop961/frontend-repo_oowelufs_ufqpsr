@@ -1,6 +1,9 @@
 import React, { useRef } from 'react';
+import TopNav from './components/TopNav';
 import Hero from './components/Hero';
 import KarmaStats from './components/KarmaStats';
+import CategoryCarousel from './components/CategoryCarousel';
+import ProCardGrid from './components/ProCardGrid';
 import SkillListing from './components/SkillListing';
 import RequestBoard from './components/RequestBoard';
 
@@ -17,11 +20,14 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100">
+    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <TopNav />
       <Hero onPrimaryClick={scrollToSkills} onSecondaryClick={scrollToRequests} />
       <div className="-mt-8">
         <KarmaStats />
       </div>
+      <CategoryCarousel />
+      <ProCardGrid />
       <section ref={skillsRef} aria-label="Skill listing">
         <SkillListing />
       </section>
