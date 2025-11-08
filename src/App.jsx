@@ -17,18 +17,18 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100">
       <Hero onPrimaryClick={scrollToSkills} onSecondaryClick={scrollToRequests} />
       <div className="-mt-8">
         <KarmaStats />
       </div>
-      <div ref={skillsRef}>
+      <section ref={skillsRef} aria-label="Skill listing">
         <SkillListing />
-      </div>
-      <div ref={requestRef}>
+      </section>
+      <section ref={requestRef} aria-label="Request board">
         <RequestBoard />
-      </div>
-      <footer className="border-t border-slate-200 bg-white">
+      </section>
+      <footer className="border-t border-slate-200 bg-white/80 backdrop-blur">
         <div className="mx-auto max-w-7xl px-6 py-8 text-center text-sm text-slate-500">
           Built for students. No money, just community. © {new Date().getFullYear()} Campus Karma Exchange
         </div>
